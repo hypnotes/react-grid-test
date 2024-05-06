@@ -34,16 +34,16 @@ export const brand = {
 }
 
 export const secondary = {
-  50: '#F9F0FF',
-  100: '#E9CEFD',
-  200: '#D49CFC',
-  300: '#B355F6',
-  400: '#750AC2',
-  500: '#6709AA',
-  600: '#490679',
-  700: '#3B0363',
-  800: '#2F024F',
-  900: '#23023B'
+  50: '#E0F7FA',  // Very light mint
+  100: '#B2EBF2', // Light mint
+  200: '#80DEEA', // Soft turquoise
+  300: '#4DD0E1', // Brighter turquoise
+  400: '#26C6DA', // Vibrant turquoise
+  500: '#00BCD4', // Standard turquoise
+  600: '#00ACC1', // Deep turquoise
+  700: '#0097A7', // Darker turquoise
+  800: '#00838F', // Deep blueish mint
+  900: '#006064'  // Dark blue mint
 }
 
 export const gray = {
