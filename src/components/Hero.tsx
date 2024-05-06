@@ -2,6 +2,7 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
+import BackgroundImage from '../assets/images/ai_mobile_systems_head_img.jpg'
 
 export default function Hero() {
   return (
@@ -9,8 +10,7 @@ export default function Hero() {
       id="hero"
       sx={() => ({
         width: '100%',
-        backgroundImage:
-          'url(/src/assets/images/ai_mobile_systems_head_img.jpg)',
+        background: `url(${BackgroundImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
