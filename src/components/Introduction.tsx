@@ -12,6 +12,7 @@ export default function Introduction() {
           color="text.primary"
           textAlign="center"
           sx={{ mb: 1 }}
+          fontWeight={900}
         >
           AI Mobile Systems
         </Typography>
