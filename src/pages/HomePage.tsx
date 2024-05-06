@@ -9,7 +9,7 @@ import LogoCollection from '../components/LogoCollection'
 import Pricing from '../components/Pricing'
 import Testimonials from '../components/Testimonials'
 
-export default function LandingPage() {
+export default function HomePage() {
   return (
     <>
       <Hero />

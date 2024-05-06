@@ -20,11 +20,10 @@ interface AppAppBarProps {
 }
 
 const appNavLinks = [
-  { title: 'Features', path: 'features' },
-  { title: 'Testimonials', path: 'testimonials' },
-  { title: 'Highlights', path: 'highlights' },
-  { title: 'Pricing', path: 'pricing' },
-  { title: 'FAQ', path: 'faq' }
+  { title: 'Home', path: '/' },
+  { title: 'Committee', path: 'committee' },
+  { title: 'Keynote', path: 'keynote' },
+  { title: 'Program', path: 'program' }
 ]
 
 export default function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
@@ -48,22 +47,22 @@ export default function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
           <Box onClick={() => navigate('/')} sx={{ cursor: 'pointer' }}>
             <Sitemark />
           </Box>
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            {appNavLinks.map((link) => (
-              <Button
-                variant="text"
-                color="info"
-                size="small"
-                onClick={() => navigate(link.path)}
-              >
-                {link.title}
-              </Button>
-            ))}
-          </Box>
         </CustomBox>
-        <ColorBox display={{ xs: 'none', md: 'flex' }}>
-          <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
-        </ColorBox>
+        <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          {appNavLinks.map((link) => (
+            <Button
+              variant="text"
+              color="info"
+              size="small"
+              onClick={() => navigate(link.path)}
+            >
+              {link.title}
+            </Button>
+          ))}
+          <ColorBox display={{ xs: 'none', md: 'flex' }}>
+            <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
+          </ColorBox>
+        </Box>
         <Box sx={{ display: { sm: 'flex', md: 'none' } }}>
           <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
             <MenuIcon />

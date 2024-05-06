@@ -1,32 +1,26 @@
 import { Navigate, type RouteObject } from 'react-router'
-import FeaturePage from '@pages/FeaturePage'
-import LandingPage from '@pages/LandingPage'
+import CommitteePage from '@pages/CommitteePage'
+import HomePage from '@pages/HomePage'
+import KeynotePage from '@pages/KeynotePage'
 import Page404 from '@pages/Page404'
+import ProgramPage from '@pages/ProgramPage'
 
 const routes: RouteObject[] = [
   {
     path: '',
-    element: <LandingPage />
+    element: <HomePage />
   },
   {
-    path: 'features',
-    element: <FeaturePage />
+    path: 'committee',
+    element: <CommitteePage />
   },
   {
-    path: 'testimonials',
-    element: <LandingPage />
+    path: 'keynote',
+    element: <KeynotePage />
   },
   {
-    path: 'highlights',
-    element: <LandingPage />
-  },
-  {
-    path: 'pricing',
-    element: <LandingPage />
-  },
-  {
-    path: 'faq',
-    element: <LandingPage />
+    path: 'program',
+    element: <ProgramPage />
   },
   {
     path: 'status',

@@ -1,11 +1,11 @@
 import Divider from '@mui/material/Divider'
-import Features from '../components/Features'
 import Footer from '../components/Footer'
+import Testimonials from '../components/Testimonials'
 
-export default function FeaturePage() {
+export default function CommitteePage() {
   return (
     <>
-      <Features />
+      <Testimonials />
       <Divider />
       <Footer />
     </>
