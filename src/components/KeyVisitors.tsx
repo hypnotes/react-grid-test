@@ -58,11 +58,11 @@ export default function Pricing() {
                     }}
                     p={2}
                   >
-                    <Typography variant="h4">{speaker.name}</Typography>
                     <Avatar
                       src={speaker.avatar ?? DefaultAvatar}
                       alt={speaker.name}
                     />
+                    <Typography variant="h4">{speaker.name}</Typography>
                   </Grid>
                   <Grid item xs={12} md={8} p={2}>
                     <Stack spacing={1}>
