@@ -2,6 +2,7 @@ type KeyVisitor = {
   name: string
   avatar?: string
   experience: string[]
+  title: string
   description: string
 }
 
@@ -14,6 +15,7 @@ export const keyVisitors: KeyVisitor[] = [
       'University of California',
       'LG Electronics'
     ],
+    title: 'Professor of Medicine',
     description:
       'Dr. John Doe is a professor at the University of California. He has been a doctor for over 10 years and has published numerous articles on the subject of medicine.'
   },
@@ -25,6 +27,7 @@ export const keyVisitors: KeyVisitor[] = [
       'University of California',
       'LG Electronics'
     ],
+    title: 'Professor of Medicine',
     description:
       'Dr. Jane Doe is a professor at the University of California. She has been a doctor for over 10 years and has published numerous articles on the subject of medicine.'
   },
@@ -36,6 +39,7 @@ export const keyVisitors: KeyVisitor[] = [
       'University of California',
       'LG Electronics'
     ],
+    title: 'Professor of Medicine',
     description:
       'Dr. Professional is a professor at the University of California. He has been a doctor for over 10 years and has published numerous articles on the subject of medicine.'
   }

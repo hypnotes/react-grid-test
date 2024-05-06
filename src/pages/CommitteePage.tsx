@@ -6,7 +6,6 @@ export default function CommitteePage() {
   return (
     <>
       <Committee />
-      <Divider />
       <Footer />
     </>
   )

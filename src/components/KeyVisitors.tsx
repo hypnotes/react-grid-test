@@ -1,6 +1,6 @@
 import { keyVisitors } from '@/data/keyVisitors'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
-import { styled } from '@mui/material'
+import { Stack, styled } from '@mui/material'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -40,25 +40,45 @@ export default function Pricing() {
       </Box>
       <Grid container spacing={3} alignItems="center" justifyContent="center">
         {keyVisitors.map((speaker) => (
-          <Grid item key={speaker.name} xs={12} md={4} padding={4}>
+          <Grid item key={speaker.name} xs={12} md={12} padding={4}>
             <CardBox sx={(theme) => ({})}>
               <CardContent>
-                <Box
-                  sx={{
-                    mb: 1,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    flexDirection: 'column',
-                    gap: 2
-                  }}
-                >
-                  <Avatar
-                    src={speaker.avatar ?? DefaultAvatar}
-                    alt={speaker.name}
-                  />
-                  <Typography variant="h4">{speaker.name}</Typography>
-                </Box>
+                <Grid container spacing={2}>
+                  <Grid
+                    item
+                    xs={12}
+                    md={4}
+                    sx={{
+                      mb: 1,
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      flexDirection: 'column',
+                      gap: 2
+                    }}
+                    p={2}
+                  >
+                    <Typography variant="h4">{speaker.name}</Typography>
+                    <Avatar
+                      src={speaker.avatar ?? DefaultAvatar}
+                      alt={speaker.name}
+                    />
+                  </Grid>
+                  <Grid item xs={12} md={8} p={2}>
+                    <Stack spacing={1}>
+                      <div>
+                        <Typography variant="h5">Title:</Typography>
+                        <Typography variant="body1">{speaker.title}</Typography>
+                      </div>
+                      <div>
+                        <Typography variant="h5">Abstract:</Typography>
+                        <Typography variant="body1">
+                          {speaker.description}
+                        </Typography>
+                      </div>
+                    </Stack>
+                  </Grid>
+                </Grid>
                 <Box display={'flex'} alignItems={'baseline'}></Box>
                 <Divider sx={{ marginY: 2 }} />
                 {speaker.experience.map((exp) => (
