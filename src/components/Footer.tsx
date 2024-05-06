@@ -36,15 +36,6 @@ export default function Footer() {
         }}
       >
         <div>
-          <Link color="text.secondary" variant="body2" href="#">
-            Privacy Policy
-          </Link>
-          <Typography display="inline" sx={{ mx: 0.5, opacity: 0.5 }}>
-            &nbsp;•&nbsp;
-          </Typography>
-          <Link color="text.secondary" variant="body2" href="#">
-            Terms of Service
-          </Link>
           <Copyright />
         </div>
       </Box>
