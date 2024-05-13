@@ -1,8 +1,14 @@
+import Footer from '@components/Footer'
+import { Box, Typography } from '@mui/material'
+
 const Page404 = () => {
   return (
-    <div>
-      <h1>404 - Not Found</h1>
-    </div>
+    <Box mt={40}>
+      <Typography variant="h1" align="center">
+        404 Not Found
+      </Typography>
+      <Footer />
+    </Box>
   )
 }
 

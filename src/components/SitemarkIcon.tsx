@@ -1,15 +1,14 @@
-import * as React from 'react'
 import { Typography } from '@mui/material'
-import SvgIcon from '@mui/material/SvgIcon'
 
-export default function SitemarkIcon() {
+export default function SitemarkIcon({ isRevert }: { isRevert: boolean }) {
   return (
     <Typography
       variant="h6"
       component="span"
-      sx={{ color: 'primary.main', fontWeight: 'bold' }}
+      color={'primary.main'}
+      sx={{ color: isRevert ? 'secondary.light' : 'secondary.main', fontWeight: 'bold' }}
     >
-      AI Mobile Systems
+      Mobile AI Systems
     </Typography>
   )
 }

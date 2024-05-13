@@ -17,7 +17,7 @@ export default function ToggleColorMode({
   return (
     <IconButton
       onClick={toggleColorMode}
-      color="primary"
+      color="secondary"
       aria-label="Theme toggle button"
       size="small"
     >

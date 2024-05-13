@@ -28,6 +28,21 @@ const appNavLinks = [
 
 export default function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
   const [open, setOpen] = React.useState(false)
+  const [isTopmostHome, setIsTopHome] = React.useState(true)
+
+  const isHomePage = window.location.pathname === '/'
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setIsTopHome(true)
+      } else {
+        setIsTopHome(false)
+      }
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen)
@@ -42,19 +57,25 @@ export default function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
 
   return (
     <CustomAppBar sx={{ boxShadow: 0 }}>
-      <CustomToolbar variant="regular">
+      <CustomToolbar
+        variant="regular"
+        isTopmostHome={isTopmostHome}
+        isHome={isHomePage}
+      >
         <CustomBox>
           <Box onClick={() => navigate('/')} sx={{ cursor: 'pointer' }}>
-            <Sitemark />
+            <Sitemark isRevert={isTopmostHome} />
           </Box>
         </CustomBox>
-        <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+        <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
           {appNavLinks.map((link) => (
             <Button
               variant="text"
               color="info"
               size="small"
               onClick={() => navigate(link.path)}
+              key={link.title + link.path}
+              style={{ color: isTopmostHome && isHomePage ? 'white' : '' }}
             >
               {link.title}
             </Button>
@@ -65,13 +86,13 @@ export default function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
         </Box>
         <Box sx={{ display: { sm: 'flex', md: 'none' } }}>
           <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
-            <MenuIcon />
+            <MenuIcon sx={{ color: isHomePage ? 'secondary.main' : '' }} />
           </IconButton>
           <Drawer anchor="top" open={open} onClose={toggleDrawer(false)}>
             <DrawerBox>
               <DrawerDrawerBox>
                 <Box onClick={() => navigate('/')} sx={{ cursor: 'pointer' }}>
-                  <Sitemark />
+                  <Sitemark isRevert={false} />
                 </Box>
                 <Box>
                   <ToggleColorMode
@@ -85,7 +106,10 @@ export default function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
               </DrawerDrawerBox>
               <Divider sx={{ my: 1 }} />
               {appNavLinks.map((link) => (
-                <MenuItem onClick={() => clickFromDrawer(link.path)}>
+                <MenuItem
+                  onClick={() => clickFromDrawer(link.path)}
+                  key={link.path}
+                >
                   {link.title}
                 </MenuItem>
               ))}
@@ -121,23 +145,20 @@ const CustomBox = styled(Box)({
   padding: 0
 })
 
-const CustomToolbar = styled(Toolbar)(({ theme }) => ({
+interface CustomToolbarProps {
+  isTopmostHome: boolean
+  isHome: boolean
+}
+
+const CustomToolbar = styled(Toolbar, {
+  shouldForwardProp: (prop) => prop !== 'isTopmostHome' && prop !== 'isHome'
+})<CustomToolbarProps>(({ theme, isTopmostHome, isHome }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
   flexShrink: 0,
-  bgcolor:
-    theme.palette.mode === 'light'
-      ? 'hsla(220, 60%, 99%, 0.6)'
-      : 'hsla(220, 0%, 0%, 0.7)',
-  backdropFilter: 'blur(24px)',
-  maxHeight: 40,
-  border: '1px solid',
-  borderColor: 'divider',
-  boxShadow:
-    theme.palette.mode === 'light'
-      ? '0 1px 2px hsla(210, 0%, 0%, 0.05), 0 2px 12px hsla(210, 100%, 80%, 0.5)'
-      : '0 1px 2px hsla(210, 0%, 0%, 0.5), 0 2px 12px hsla(210, 100%, 25%, 0.3)'
+  backgroundColor: isTopmostHome ? 'transparent' : 'white',
+  maxHeight: 40
 }))
 
 const CustomAppBar = styled(AppBar)({

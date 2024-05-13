@@ -15,7 +15,7 @@ export default function Pricing() {
     <Container
       id="pricing"
       sx={{
-        pt: { xs: 4, sm: 12 },
+        pt: { xs: 12, sm: 12 },
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
@@ -61,6 +61,7 @@ export default function Pricing() {
                     <Avatar
                       src={speaker.avatar ?? DefaultAvatar}
                       alt={speaker.name}
+                      sx={{ bgcolor: 'whitesmoke' }}
                     />
                     <Typography variant="h4">{speaker.name}</Typography>
                   </Grid>

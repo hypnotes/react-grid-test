@@ -1,5 +1,4 @@
-import * as React from 'react'
-import { Stack } from '@mui/material'
+import { Divider, Stack } from '@mui/material'
 import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -7,26 +6,23 @@ import CardHeader from '@mui/material/CardHeader'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
+import Han from '/han.jpg'
+import Joo from '/joo.png'
 
 const organizingCommittee = [
   {
-    avatar: (
-      <Avatar alt="Vaishnavi Ranganthan" src="/static/images/avatar/1.jpg" />
-    ),
-    name: 'Vaishnavi Ranganthan',
-    occupation: 'Microsoft Research'
+    avatar: Han,
+    name: 'Junghyun Han',
+    occupation: 'Korea University',
+    email: 'jhan@korea.ac.kr',
+    role: 'Workshop Chair'
   },
   {
-    avatar: (
-      <Avatar alt="Zerina Kapetanovic" src="/static/images/avatar/2.jpg" />
-    ),
-    name: 'Zerina Kapetanovic',
-    occupation: 'Stanford University'
-  },
-  {
-    avatar: <Avatar alt="Kurtis Keimerl" src="/static/images/avatar/3.jpg" />,
-    name: 'Kurtis Keimerl',
-    occupation: 'University of Washington'
+    avatar: Joo,
+    name: 'Changhee Joo',
+    occupation: 'Korea University',
+    email: 'changhee@korea.ac.kr',
+    role: 'Program Chair'
   }
 ]
 const technicalProgramCommittee = [
@@ -66,12 +62,11 @@ const technicalProgramCommittee = [
 
 export default function Committee() {
   return (
-    <Container
+    <Box
       id="committee"
       sx={{
-        pt: { xs: 4, sm: 12 },
+        pt: 12,
         pb: { xs: 8, sm: 16 },
-        position: 'relative',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -80,8 +75,8 @@ export default function Committee() {
     >
       <Box
         sx={{
-          width: { sm: '100%', md: '60%' },
-          textAlign: { sm: 'left', md: 'center' }
+          width: { sm: '100%', md: '80%' },
+          textAlign: 'center'
         }}
       >
         <Typography component="h2" variant="h4" color="text.primary">
@@ -90,39 +85,57 @@ export default function Committee() {
       </Box>
       <Stack spacing={10}>
         <Stack spacing={1} sx={{ alignItems: 'center' }}>
-          <Typography variant="h5" color="text.primary">
+          <Typography variant="h5" color="text.primary" sx={{ mb: 10 }}>
             Organizing Committee
           </Typography>
-          <Grid container spacing={2}>
+          <Grid container justifyContent={'center'} gap={2}>
             {organizingCommittee.map((committee, index) => (
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={4}
-                key={index}
-                sx={{ display: 'flex' }}
-              >
+              <Grid item xs={11} md={6} key={index} sx={{ display: 'flex' }}>
                 <Card
                   sx={{
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     flexGrow: 1,
-                    p: 1
+                    p: { xs: 1, sm: 2 },
+                    width: '100%'
                   }}
                 >
-                  <CardHeader
-                    avatar={committee.avatar}
-                    title={committee.name}
-                    subheader={committee.occupation}
-                  />
+                  <Box display={'flex'} gap={2} alignItems={'center'}>
+                    <Avatar
+                      sx={{ width: { xs: 32, md: 100 }, height: 'auto' }}
+                      alt={committee.name}
+                      src={committee.avatar}
+                    />
+                    <Divider orientation="vertical" flexItem />
+                    <Box>
+                      <Typography
+                        color="text.primary"
+                        fontSize={{ xs: '1rem', md: '1.5rem' }}
+                      >
+                        {committee.role}
+                      </Typography>
+                      <Typography
+                        color="text.secondary"
+                        fontSize={{ xs: '0.8rem', md: '1.2rem' }}
+                      >
+                        {committee.name}
+                      </Typography>
+                      <Typography
+                        color="text.secondary"
+                        noWrap
+                        fontSize={{ xs: '0.8rem', md: '1.2rem' }}
+                      >
+                        {committee.occupation} / {committee.email}
+                      </Typography>
+                    </Box>
+                  </Box>
                 </Card>
               </Grid>
             ))}
           </Grid>
         </Stack>
-        <Stack spacing={1} sx={{ alignItems: 'center' }}>
+        {/* <Stack spacing={1} sx={{ alignItems: 'center' }}>
           <Typography variant="h5" color="text.primary">
             Technical Program Committee
           </Typography>
@@ -154,8 +167,8 @@ export default function Committee() {
               </Grid>
             ))}
           </Grid>
-        </Stack>
+        </Stack> */}
       </Stack>
-    </Container>
+    </Box>
   )
 }

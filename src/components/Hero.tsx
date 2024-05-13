@@ -41,7 +41,7 @@ export default function Hero() {
               color: 'common.white'
             }}
           >
-            AI&nbsp;Mobile&nbsp;Systems
+            Mobile&nbsp;AI&nbsp;Systems
           </Typography>
           <Container
             sx={{ width: '30%', height: '10px', bgcolor: 'primary.main' }}
