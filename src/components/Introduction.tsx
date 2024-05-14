@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Box, Divider } from '@mui/material'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
@@ -30,8 +31,17 @@ export default function Introduction() {
         >
           June 3rd, 2024, Tokyo
         </Typography>
-        <Typography variant="h5" color="text.primary" textAlign="center">
-          <i>in conjunction with MobiSys 2024</i>
+        <Typography variant="h6" color="text.secondary" textAlign="center">
+          <i>
+            in conjunction with&nbsp;
+            <Link
+              to={'https://www.sigmobile.org/mobisys/2024/'}
+              style={{ color: 'gray' }}
+              target="_blank"
+            >
+              2024 MobiSys
+            </Link>
+          </i>
         </Typography>
         <Box sx={{ maxWidth: { xs: '90%', sm: '80%' } }}>
           <Divider sx={{ my: 6 }} />
@@ -40,23 +50,26 @@ export default function Introduction() {
             color="text.secondary"
             textAlign={{ xs: 'left', sm: 'justify' }}
           >
-            Mobile AI systems have become an integral part of our daily lives,
-            profoundly influencing how we interact, work, and navigate the world
-            around us. From the AI-powered functionalities on our smartphones to
-            the transformative impact on mobile robotics and IoT, the
-            integration of AI into mobile devices is reshaping our experiences
-            on both personal and global scales. As we embark on this inaugural
-            MAIS workshop, we stand at the forefront of a new era in mobile AI
-            innovation. Many fascinating AI techniques are currently confined to
-            datacenters, limiting their direct applicability in our daily lives.
-            Our mission is to bridge this gap by bringing AI innovation closer
-            to everyday experiences through integration into mobile devices. The
-            future of mobile AI systems begins with your contributions and
-            participation at MAIS 2024. We invite you to engage with us,
-            exploring how your creative innovations can shape the trajectory of
-            mobile AI development. Join us to unleash your inventiveness and
-            play a pivotal role in shaping the next era of mobile AI systems
-            together.
+            &nbsp;&nbsp;&nbsp;&nbsp;Mobile AI systems have become an integral
+            part of our daily lives, profoundly influencing how we interact,
+            work, and navigate the world around us. From the AI-powered
+            functionalities on our smartphones to the transformative impact on
+            mobile robotics and IoT, the integration of AI into mobile devices
+            is reshaping our experiences on both personal and global scales. As
+            we embark on this inaugural MAIS workshop, we stand at the forefront
+            of a new era in mobile AI innovation. Many fascinating AI techniques
+            are currently confined to datacenters, limiting their direct
+            applicability in our daily lives.
+            <br />
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp; Our mission is to bridge this gap by
+            bringing AI innovation closer to everyday experiences through
+            integration into mobile devices. The future of mobile AI systems
+            begins with your contributions and participation at MAIS 2024. We
+            invite you to engage with us, exploring how your creative
+            innovations can shape the trajectory of mobile AI development. Join
+            us to unleash your inventiveness and play a pivotal role in shaping
+            the next era of mobile AI systems together.
           </Typography>
         </Box>
       </Box>

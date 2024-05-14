@@ -113,13 +113,13 @@ const Avatar = styled('img')({
 const CardBox = styled(Card)(({ theme }) => ({
   padding: 24,
   transition:
-    'transform 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+    'transform 0.3s ease-in-out, background-color 0.7s ease-in-out, box-shadow 0.3s ease-in-out',
   display: 'flex',
   flexDirection: 'column',
   gap: 4,
   minHeight: 300,
   ':hover': {
-    transform: 'scale(1.05)',
+    transform: 'scale(1.01)',
     border: 'none',
     boxShadow:
       theme.palette.mode === 'light'

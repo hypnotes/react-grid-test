@@ -1,4 +1,3 @@
-import Divider from '@mui/material/Divider'
 import Committee from '../components/Committee'
 import Footer from '../components/Footer'
 

@@ -84,8 +84,8 @@ export default function Committee() {
         </Typography>
       </Box>
       <Stack spacing={10}>
-        <Stack spacing={1} sx={{ alignItems: 'center' }}>
-          <Typography variant="h5" color="text.primary" sx={{ mb: 10 }}>
+        <Stack spacing={1} sx={{ alignItems: 'center' }} gap={4}>
+          <Typography variant="h5" color="text.primary" fontWeight={'bold'}>
             Organizing Committee
           </Typography>
           <Grid container justifyContent={'center'} gap={2}>
@@ -98,7 +98,12 @@ export default function Committee() {
                     justifyContent: 'space-between',
                     flexGrow: 1,
                     p: { xs: 1, sm: 2 },
-                    width: '100%'
+                    px: { xs: 2, sm: 4 },
+                    transition: 'transform 0.3s',
+                    width: '100%',
+                    ':hover': {
+                      transform: 'scale(1.05)'
+                    }
                   }}
                 >
                   <Box display={'flex'} gap={2} alignItems={'center'}>
@@ -111,20 +116,22 @@ export default function Committee() {
                     <Box>
                       <Typography
                         color="text.primary"
-                        fontSize={{ xs: '1rem', md: '1.5rem' }}
+                        fontSize={{ xs: 15, md: 18 }}
+                        mb={{ xs: 1, md: 2 }}
                       >
                         {committee.role}
                       </Typography>
                       <Typography
                         color="text.secondary"
-                        fontSize={{ xs: '0.8rem', md: '1.2rem' }}
+                        fontWeight={'bold'}
+                        fontSize={{ xs: 15, md: 18 }}
                       >
                         {committee.name}
                       </Typography>
                       <Typography
                         color="text.secondary"
                         noWrap
-                        fontSize={{ xs: '0.8rem', md: '1.2rem' }}
+                        fontSize={{ xs: 12, md: 15 }}
                       >
                         {committee.occupation} / {committee.email}
                       </Typography>
