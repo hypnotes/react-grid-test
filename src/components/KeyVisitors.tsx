@@ -84,8 +84,8 @@ export default function Pricing() {
                 <Box display={'flex'} alignItems={'baseline'}></Box>
                 <Divider sx={{ marginY: 2 }} />
 
-                {speaker.experience.map((exp) => (
-                  <Box display="flex" mb="0.5rem">
+                {speaker.experience.map((exp, i) => (
+                  <Box key={`exp-${i}`} display="flex" mb="0.5rem">
                     <AutoAwesomeIcon
                       fontSize="small"
                       style={{

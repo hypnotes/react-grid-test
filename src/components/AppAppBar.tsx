@@ -29,8 +29,13 @@ const appNavLinks = [
 export default function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
   const [open, setOpen] = React.useState(false)
   const [isTopmostHome, setIsTopHome] = React.useState(true)
+  const [isHomePage, setIsHomePage] = React.useState(
+    window.location.pathname === '/'
+  )
 
-  const isHomePage = window.location.pathname === '/'
+  React.useEffect(() => {
+    setIsHomePage(window.location.pathname === '/')
+  }, [window.location.pathname])
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -75,7 +80,9 @@ export default function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
               size="small"
               onClick={() => navigate(link.path)}
               key={link.title + link.path}
-              style={{ color: isTopmostHome && isHomePage ? 'white' : '' }}
+              style={{
+                color: isTopmostHome && isHomePage ? 'white' : ' '
+              }}
             >
               {link.title}
             </Button>
@@ -86,7 +93,7 @@ export default function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
         </Box>
         <Box sx={{ display: { sm: 'flex', md: 'none' } }}>
           <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
-            <MenuIcon sx={{ color: isHomePage ? 'secondary.main' : '' }} />
+            <MenuIcon sx={{ color: 'primary.main' }} />
           </IconButton>
           <Drawer anchor="top" open={open} onClose={toggleDrawer(false)}>
             <DrawerBox>
@@ -157,7 +164,9 @@ const CustomToolbar = styled(Toolbar, {
   alignItems: 'center',
   justifyContent: 'space-between',
   flexShrink: 0,
-  backgroundColor: isTopmostHome ? 'transparent' : 'white',
+  backgroundColor: isTopmostHome
+    ? 'transparent'
+    : theme.palette.background.paper,
   maxHeight: 40
 }))
 

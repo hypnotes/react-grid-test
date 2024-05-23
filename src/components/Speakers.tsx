@@ -80,8 +80,8 @@ export default function Speakers() {
                 <Box display={'flex'} alignItems={'baseline'}></Box>
                 <Divider sx={{ marginY: 2 }} />
 
-                {speaker.experience.map((exp) => (
-                  <Box display="flex" mb="0.2rem">
+                {speaker.experience.map((exp, i) => (
+                  <Box key={`exp-${i}`} display="flex" mb="0.2rem">
                     <AutoAwesomeIcon
                       fontSize="small"
                       style={{

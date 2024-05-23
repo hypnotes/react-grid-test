@@ -25,9 +25,7 @@ const ScheduleGrid = () => {
           </Grid>
         </Grid>
       )}
-      <Divider
-        sx={{ borderWidth: 1, backgroundColor: palette.secondary.main }}
-      />
+      <Divider sx={{ borderWidth: 1, backgroundColor: palette.primary.main }} />
       {scheduleData.map((item, index) => (
         <Box key={index}>
           {isMobile ? (
@@ -47,9 +45,7 @@ const ScheduleGrid = () => {
                   <Typography
                     variant="body2"
                     fontWeight={'bold'}
-                    color={
-                      item.presenter ? 'undefined' : palette.secondary.main
-                    }
+                    color={item.presenter ? 'undefined' : palette.primary.main}
                   >
                     {item.program}
                   </Typography>
@@ -84,7 +80,7 @@ const ScheduleGrid = () => {
                   ) : (
                     <Typography
                       sx={{ margin: '1rem 0rem', fontsize: '1rem' }}
-                      color="secondary"
+                      color="primary"
                       fontWeight={'bold'}
                       textAlign={'center'}
                     >

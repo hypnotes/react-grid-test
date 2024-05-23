@@ -5,8 +5,7 @@ export default function SitemarkIcon({ isRevert }: { isRevert: boolean }) {
     <Typography
       variant="h6"
       component="span"
-      color={'primary.main'}
-      sx={{ color: isRevert ? 'secondary.light' : 'secondary.main', fontWeight: 'bold' }}
+      sx={{ color: 'primary.main', fontWeight: 'bold' }}
     >
       Mobile AI Systems
     </Typography>
