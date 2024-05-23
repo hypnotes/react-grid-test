@@ -41,7 +41,7 @@ export default function Committee() {
         <Stack spacing={1} sx={{ alignItems: 'center' }} gap={4}>
           <Grid container justifyContent={'center'} gap={2}>
             {organizingCommittee.map((committee, index) => (
-              <Grid item xs={11} md={6} key={index} sx={{ display: 'flex' }}>
+              <Grid item xs={11} md={11} key={index} sx={{ display: 'flex' }}>
                 <Card
                   sx={{
                     display: 'flex',
@@ -58,14 +58,15 @@ export default function Committee() {
                   }}
                 >
                   <Box display={'flex'} gap={2} alignItems={'center'}>
-                    <Avatar
+                    {/* <Avatar
                       sx={{ width: { xs: 32, md: 100 }, height: 'auto' }}
                       alt={committee.name}
                       src={committee.avatar}
                     />
-                    <Divider orientation="vertical" flexItem />
+                    <Divider orientation="vertical" flexItem /> */}
                     <Box>
                       <Typography
+                        variant="h6"
                         color="text.primary"
                         fontSize={{ xs: 15, md: 18 }}
                         mb={{ xs: 1, md: 2 }}
@@ -73,7 +74,7 @@ export default function Committee() {
                         {committee.role}
                       </Typography>
                       <Typography
-                        color="text.secondary"
+                        color="text.primary"
                         fontWeight={'bold'}
                         fontSize={{ xs: 15, md: 18 }}
                       >
