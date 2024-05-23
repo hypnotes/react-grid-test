@@ -22,7 +22,7 @@ interface AppAppBarProps {
 const appNavLinks = [
   { title: 'Home', path: '/' },
   { title: 'Committee', path: 'committee' },
-  { title: 'Keynote', path: 'keynote' },
+  { title: 'Keynote & Speakers', path: 'keynote' },
   { title: 'Program', path: 'program' }
 ]
 

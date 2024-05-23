@@ -2,8 +2,6 @@ import { Divider, Stack } from '@mui/material'
 import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
-import CardHeader from '@mui/material/CardHeader'
-import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import Han from '/han.jpg'
@@ -25,40 +23,6 @@ const organizingCommittee = [
     role: 'Program Chair'
   }
 ]
-const technicalProgramCommittee = [
-  {
-    avatar: <Avatar alt="Akshay Gadre" src="/static/images/avatar/4.jpg" />,
-    name: 'Akshay Gadre',
-    occupation: 'University of Washington'
-  },
-  {
-    avatar: <Avatar alt="Deepak Vasisht" src="/static/images/avatar/5.jpg" />,
-    name: 'Deepak Vasisht',
-    occupation: 'University of Illinois - Urbana-Champaign'
-  },
-  {
-    avatar: <Avatar alt="Vikram Iyer" src="/static/images/avatar/6.jpg" />,
-    name: 'Vikram Iyer',
-    occupation: 'University of Washington'
-  },
-  {
-    avatar: (
-      <Avatar alt="Colleen Josephson" src="/static/images/avatar/1.jpg" />
-    ),
-    name: 'Colleen Josephson',
-    occupation: 'University of California - Santa Cruz'
-  },
-  {
-    avatar: <Avatar alt="Josiah Hester" src="/static/images/avatar/2.jpg" />,
-    name: 'Josiah Hester',
-    occupation: 'Georgia Tech'
-  },
-  {
-    avatar: <Avatar alt="Upinder Kaur" src="/static/images/avatar/3.jpg" />,
-    name: 'Upinder Kaur',
-    occupation: 'Purdue'
-  }
-]
 
 export default function Committee() {
   return (
@@ -73,21 +37,8 @@ export default function Committee() {
         gap: { xs: 3, sm: 6 }
       }}
     >
-      <Box
-        sx={{
-          width: { sm: '100%', md: '80%' },
-          textAlign: 'center'
-        }}
-      >
-        <Typography component="h2" variant="h4" color="text.primary">
-          Committee
-        </Typography>
-      </Box>
       <Stack spacing={10}>
         <Stack spacing={1} sx={{ alignItems: 'center' }} gap={4}>
-          <Typography variant="h5" color="text.primary" fontWeight={'bold'}>
-            Organizing Committee
-          </Typography>
           <Grid container justifyContent={'center'} gap={2}>
             {organizingCommittee.map((committee, index) => (
               <Grid item xs={11} md={6} key={index} sx={{ display: 'flex' }}>

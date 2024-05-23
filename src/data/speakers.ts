@@ -33,7 +33,7 @@ export const speakers: Speaker[] = [
       'IoT systems have the potential to enrich our lives, yet there are substantial gaps in deploying these systems in real-world environments. In this talk, I will share the lessons learned from the design, implementation, and operation of multiple sensing and intervention IoT platforms (i.e., MOCHA, SFC-GO, and SmileWave), which have been utilized by over 7,000 individuals over the course of three years.'
   },
   {
-    name: '양경식',
+    name: 'Gyeongsik Yang',
     avatar: 'src/assets/speakers/profYangGyeongsik.png',
     experience: [
       '2017-2019: Ph.D. in Computer Science and Engineering, Korea University',
@@ -46,7 +46,7 @@ export const speakers: Speaker[] = [
       'The Internet of Things (IoT) is driving the development of smart industries that demand real-time control through efficient computing infrastructure like edge computing. Our research investigates the computing and communication overhead in IoT devices, focusing on the challenges posed by containers, a key component in edge computing. We identify significant performance bottlenecks in the existing container networking stack and explore possible solutions to improve IoT application latencies and CPU efficiency.'
   },
   {
-    name: '허준범',
+    name: 'Junbeom Hur',
     avatar: 'src/assets/speakers/profHurJunBeom.jpg',
     experience: [
       '2005~2009: Ph.D. Dept. of Computer Science and Engineering, KAIST',
@@ -60,7 +60,7 @@ export const speakers: Speaker[] = [
       'Neural network architecture and parameters are secret information of most of the current AI services. In this study, we will introduce SW-based side-channels using power, frequency, thermal, and memory usage. We then present how such side-channels can be exploited to attack neural networks, and demonstrate their efficacy by extracting hidden architecture of the neural networks in practice.'
   },
   {
-    name: '김진규',
+    name: 'Jinkyu Kim',
     avatar: 'src/assets/speakers/profKimJinkyu.png',
     experience: [
       '2015~2019: Ph.D. Dept. of Electrical Engineering and Computer Science, UC Berkeley',
@@ -73,7 +73,7 @@ export const speakers: Speaker[] = [
       'Self-driving vehicle (and robot) perception and control have made dramatic progress in the last several years, and many auto vendors have pledged large-scale commercialization in a 2-3 year time frame. These controllers use a variety of approaches but recent successes suggest that neural networks will be widely used. There have been a variety of approaches, which depend on the modular perception-prediction-planning-control pipeline, where each module can be built using deep learning methods. In this talk, I will introduce some of recent work on deep learning for autonomous driving at scale and the variety of challenges.'
   },
   {
-    name: '주창희',
+    name: 'Changhee Joo',
     avatar: 'src/assets/speakers/profJooChanghee.jpg',
     experience: [
       '2000-2005: Ph.D. School of Electrical and Computer Engineering, Seoul National Univ.',

@@ -34,7 +34,7 @@ export const brand = {
 }
 
 export const secondary = {
-  50: '#E0F7FA',  // Very light mint
+  50: '#E0F7FA', // Very light mint
   100: '#B2EBF2', // Light mint
   200: '#80DEEA', // Soft turquoise
   300: '#4DD0E1', // Brighter turquoise
@@ -43,7 +43,7 @@ export const secondary = {
   600: '#00ACC1', // Deep turquoise
   700: '#0097A7', // Darker turquoise
   800: '#00838F', // Deep blueish mint
-  900: '#006064'  // Dark blue mint
+  900: '#006064' // Dark blue mint
 }
 
 export const gray = {
@@ -81,10 +81,10 @@ const getDesignTokens = (mode: PaletteMode) => ({
       dark: brand[800],
       contrastText: brand[50],
       ...(mode === 'dark' && {
-        contrastText: brand[800],
+        contrastText: brand[50],
         light: brand[300],
         main: brand[200],
-        dark: brand[800]
+        dark: brand[900]
       })
     },
     secondary: {
