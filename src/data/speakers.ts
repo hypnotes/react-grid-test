@@ -1,3 +1,10 @@
+import Hur from '/speakers/profHurJunbeom.jpg'
+import Joo from '/speakers/profJooChanghee.jpg'
+import Kim from '/speakers/profKimJinkyu.png'
+import KoketsuRodrigues from '/speakers/profTiagoKoketsuRodrigues.jpg'
+import Yang from '/speakers/profYangGyeongsik.png'
+import Nishiyama from '/speakers/profYuukiNishiyama.png'
+
 type Speaker = {
   name: string
   avatar?: string
@@ -9,7 +16,7 @@ type Speaker = {
 export const speakers: Speaker[] = [
   {
     name: 'Tiago Koketsu Rodrigues',
-    avatar: 'src/assets/speakers/profTiagoKoketsuRodrigues.jpg',
+    avatar: KoketsuRodrigues,
     experience: [
       '2015-2017: M.Sc., Graduate School of Information Sciences, Tohoku University',
       '2017-2020: Ph.D., Graduate School of Information Sciences, Tohoku University',
@@ -22,7 +29,7 @@ export const speakers: Speaker[] = [
   },
   {
     name: 'Yuuki Nishiyama',
-    avatar: 'src/assets/speakers/profYuukiNishiyama.png',
+    avatar: Nishiyama,
 
     experience: [
       'University of Tokyo',
@@ -34,7 +41,7 @@ export const speakers: Speaker[] = [
   },
   {
     name: 'Gyeongsik Yang',
-    avatar: 'src/assets/speakers/profYangGyeongsik.png',
+    avatar: Yang,
     experience: [
       '2017-2019: Ph.D. in Computer Science and Engineering, Korea University',
       '2018: Research Intern, Networking Research Group, Microsoft Research Asia',
@@ -47,7 +54,7 @@ export const speakers: Speaker[] = [
   },
   {
     name: 'Junbeom Hur',
-    avatar: 'src/assets/speakers/profHurJunBeom.jpg',
+    avatar: Hur,
     experience: [
       '2005~2009: Ph.D. Dept. of Computer Science and Engineering, KAIST',
       '2009~2011: Postdoc researcher, Dept. of Computer Science of Engineering, University of Illinois at Urbana-Champaign',
@@ -61,7 +68,7 @@ export const speakers: Speaker[] = [
   },
   {
     name: 'Jinkyu Kim',
-    avatar: 'src/assets/speakers/profKimJinkyu.png',
+    avatar: Kim,
     experience: [
       '2015~2019: Ph.D. Dept. of Electrical Engineering and Computer Science, UC Berkeley',
       '2020~2021: Research Scientist, Waymo Research',
@@ -74,7 +81,7 @@ export const speakers: Speaker[] = [
   },
   {
     name: 'Changhee Joo',
-    avatar: 'src/assets/speakers/profJooChanghee.jpg',
+    avatar: Joo,
     experience: [
       '2000-2005: Ph.D. School of Electrical and Computer Engineering, Seoul National Univ.',
       '2005-2010: Postdoc researcher, Dept of ECE, Purdue Univ. and Dept of CSE, Ohio State Univ.',

@@ -1,3 +1,5 @@
+import Ma from '/speakers/profDongMa.jpg'
+
 type KeyVisitor = {
   name: string
   avatar?: string
@@ -9,7 +11,7 @@ type KeyVisitor = {
 export const keyVisitors: KeyVisitor[] = [
   {
     name: 'Dong Ma',
-    avatar: 'src/assets/speakers/profDongMa.jpg',
+    avatar: Ma,
     experience: [
       'Singapore Management University',
       'Dr. Dong Ma is currently an Assistant Professor at Singapore Management University. He earned his PhD from the University of New South Wales, Australia, in 2019, followed by a postdoctoral fellowship at the University of Cambridge until 2021. His research interests focus on wearable computing systems, including human-machine interaction, physiological monitoring, and embedded machine learning.'
