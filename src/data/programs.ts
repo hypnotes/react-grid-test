@@ -1,43 +1,55 @@
+import { time } from 'console'
+
 const scheduleData = [
   {
-    time: '13:00 - 14:00',
-    program: 'Opening Ceremony',
-    presenter: '홍길동 교수님',
-    affiliation: '고려대 컴퓨터학과',
-    chair: '',
-    location: '고려대학교 본관 1층 대강당'
+    time: '14:00 - 14:05',
+    program: 'Opening remark',
+    presenter: ' '
   },
   {
-    time: '14:00 - 15:00',
-    program: 'Keynote Speech',
-    presenter: '홍길동 교수님',
-    affiliation: '고려대 컴퓨터학과',
-    chair: '',
-    location: '고려대학교 본관 1층 대강당'
+    time: '14:05 - 14:50',
+    program: 'Keynote (40 minutes talk + 5 minutes Q&A)',
+    presenter: ' '
   },
   {
-    time: '15:00 - 15:30',
-    program: 'Coffee Break',
-    presenter: '',
-    affiliation: '',
-    chair: '',
-    location: ''
+    time: '14:50 - 15:10',
+    program: 'Talk 1',
+    presenter: ' '
   },
   {
-    time: '15:30 - 16:30',
-    program: 'Session 1',
-    presenter: '홍길동 교수님',
-    affiliation: '고려대 컴퓨터학과',
-    chair: '홍길동 교수님',
-    location: '고려대학교 본관 1층 101호'
+    time: '15:10 - 15:30',
+    program: 'Talk 2',
+    presenter: ' '
   },
   {
-    time: '16:30 - 17:00',
-    program: 'Session 2',
-    presenter: '홍길동 교수님',
-    affiliation: '고려대 컴퓨터학과',
-    chair: '홍길동 교수님',
-    location: '고려대학교 본관 1층 101호'
+    time: '15:30 - 16:00',
+    program: 'Coffee break',
+    presenter: undefined
+  },
+  {
+    time: '16:00 - 16:20',
+    program: 'Talk 3',
+    presenter: ' '
+  },
+  {
+    time: '16:20 - 16:40',
+    program: 'Talk 4',
+    presenter: ' '
+  },
+  {
+    time: '16:40 - 17:00',
+    program: 'Talk 5',
+    presenter: ' '
+  },
+  {
+    time: '17:00 - 17:20',
+    program: 'Talk 6',
+    presenter: ' '
+  },
+  {
+    time: '17:20 - 17:30',
+    program: 'Wrap-up',
+    presenter: ' '
   }
 ]
 

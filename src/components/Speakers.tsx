@@ -1,4 +1,4 @@
-import { keyVisitors } from '@/data/keyVisitors'
+import { speakers } from '@/data/speakers'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import { Stack, styled } from '@mui/material'
 import Box from '@mui/material/Box'
@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography'
 import DefaultAvatar from '../assets/logos/DefaultAvatar.png'
 import { Avatar } from './Avatar'
 
-export default function Pricing() {
+export default function Speakers() {
   return (
     <Container
       id="pricing"
@@ -31,16 +31,11 @@ export default function Pricing() {
         }}
       >
         <Typography component="h2" variant="h4" color="text.primary">
-          Keynote
+          Speakers
         </Typography>
-        {/* <Typography variant="body1" color="text.secondary">
-          Meet incredible people who have made a difference in the world. Our
-          speakers are experts in their fields, and they are here to share their
-          knowledge and experience with you.
-        </Typography> */}
       </Box>
       <Grid container spacing={3} alignItems="center" justifyContent="center">
-        {keyVisitors.map((speaker) => (
+        {speakers.map((speaker) => (
           <Grid item key={speaker.name} xs={12} md={12} padding={4}>
             <CardBox sx={(theme) => ({})}>
               <CardContent>
@@ -50,7 +45,6 @@ export default function Pricing() {
                     xs={12}
                     md={4}
                     sx={{
-                      mb: 1,
                       display: 'flex',
                       justifyContent: 'center',
                       alignItems: 'center',
@@ -64,7 +58,9 @@ export default function Pricing() {
                       alt={speaker.name}
                       sx={{ bgcolor: 'whitesmoke' }}
                     />
-                    <Typography variant="h4">{speaker.name}</Typography>
+                    <Typography variant="h4" textAlign="center">
+                      {speaker.name}
+                    </Typography>
                   </Grid>
                   <Grid item xs={12} md={8} p={2}>
                     <Stack spacing={1}>
@@ -85,7 +81,7 @@ export default function Pricing() {
                 <Divider sx={{ marginY: 2 }} />
 
                 {speaker.experience.map((exp) => (
-                  <Box display="flex" mb="0.5rem">
+                  <Box display="flex" mb="0.2rem">
                     <AutoAwesomeIcon
                       fontSize="small"
                       style={{

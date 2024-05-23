@@ -17,14 +17,11 @@ const ScheduleGrid = () => {
     <Container sx={{ width: '90vw', maxWidth: '1000px', marginY: 8 }}>
       {!isMobile && (
         <Grid container spacing={3} py={2}>
-          <Grid item xs={2}>
+          <Grid item xs={4}>
             <TitleTypography>시간</TitleTypography>
           </Grid>
-          <Grid item xs={7}>
+          <Grid item xs={8}>
             <TitleTypography>프로그램</TitleTypography>
-          </Grid>
-          <Grid item xs={3}>
-            <TitleTypography>연사</TitleTypography>
           </Grid>
         </Grid>
       )}
@@ -66,31 +63,20 @@ const ScheduleGrid = () => {
                     >
                       {item.presenter}
                     </Typography>
-                    {item.affiliation &&
-                      item.affiliation !== '고려대 컴퓨터학과' && (
-                        <Typography
-                          variant="caption"
-                          fontWeight={500}
-                          color={palette.secondary.main}
-                          ml={1}
-                        >
-                          {item.affiliation}
-                        </Typography>
-                      )}
                   </Box>
                 )}
               </Grid>
             </Grid>
           ) : (
             <Grid container spacing={3} alignContent={'center'}>
-              <Grid item xs={2}>
+              <Grid item xs={4}>
                 <ContentTypographyLight>{item.time}</ContentTypographyLight>
               </Grid>
-              <Grid item xs={7} alignContent={'center'}>
+              <Grid item xs={8} alignContent={'center'}>
                 <Box
                   display={'flex'}
                   flexDirection={'row'}
-                  justifyContent={item.presenter ? 'flex-start' : 'center'}
+                  // justifyContent={item.presenter ? 'flex-start' : 'center'}
                   alignContent={'center'}
                 >
                   {item.presenter ? (
@@ -107,25 +93,6 @@ const ScheduleGrid = () => {
                   )}
                 </Box>
               </Grid>
-              {item.presenter && (
-                <Grid item xs={3} display={'flex'} alignItems={'baseline'}>
-                  <ContentTypographyLight>
-                    {item.presenter}
-                    {item.affiliation &&
-                      item.affiliation !== '고려대 컴퓨터학과' && (
-                        <Typography
-                          variant="caption"
-                          fontWeight={600}
-                          color={palette.secondary.main}
-                          ml={1}
-                        >
-                          • {item.affiliation}
-                        </Typography>
-                        // <Chip label={item.affiliation} variant="outlined" color={'secondary'} size="small" />
-                      )}
-                  </ContentTypographyLight>
-                </Grid>
-              )}
             </Grid>
           )}
           <Divider />
