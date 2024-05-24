@@ -2,14 +2,20 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
+import ICTLogo from '../assets/images/ict_logo.png'
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary" mt={1}>
-      {'Copyright © '}
-      <Link href="/">Mobile AI Systems &nbsp;</Link>
-      {new Date().getFullYear()}
-    </Typography>
+    <>
+      <img src={ICTLogo} alt="Mobile AI Systems" height={40} />
+      <Typography variant="body2" color="text.secondary" mt={1}>
+        {'Copyright © '}
+        <Link href="https://mpij.korea.ac.kr/mpij/index.do">
+          ICT Creative Consilience Foundation &nbsp;
+        </Link>
+        {new Date().getFullYear()}
+      </Typography>
+    </>
   )
 }
 

@@ -56,7 +56,7 @@ export default function Introduction() {
             color="text.primary"
             textAlign={{ xs: 'left', sm: 'justify' }}
           >
-            &nbsp;&nbsp;&nbsp;Mobile AI systems have become an integral part of
+            Mobile AI systems have become an integral part of
             our daily lives, profoundly influencing how we interact, work, and
             navigate the world around us. From the AI-powered functionalities on
             our smartphones to the transformative impact on mobile robotics and
@@ -64,7 +64,7 @@ export default function Introduction() {
             experiences on both personal and global scales.
             <br />
             <br />
-            &nbsp;&nbsp;&nbsp;As we embark on this inaugural MAIS workshop, we
+            As we embark on this inaugural MAIS workshop, we
             stand at the forefront of a new era in mobile AI innovation. Many
             fascinating AI techniques are currently confined to datacenters,
             limiting their direct applicability in our daily lives. Our mission
@@ -72,13 +72,13 @@ export default function Introduction() {
             experiences through integration into mobile devices.
             <br />
             <br />
-            &nbsp;&nbsp;&nbsp;The future of mobile AI systems begins with your
+            The future of mobile AI systems begins with your
             contributions and participation at MAIS 2024. We invite you to
             engage with us, exploring how your creative innovations can shape
             the trajectory of mobile AI development.
             <br />
             <br />
-            &nbsp;&nbsp;&nbsp;Join us to unleash your inventiveness and play a
+            Join us to unleash your inventiveness and play a
             pivotal role in shaping the next era of mobile AI systems together.
           </Typography>
         </Box>
