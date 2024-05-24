@@ -1,6 +1,6 @@
 import { keyVisitors } from '@/data/keyVisitors'
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
-import { Stack, styled } from '@mui/material'
+import { ArrowRight } from '@mui/icons-material'
+import { Stack, styled, useMediaQuery, useTheme } from '@mui/material'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -11,12 +11,14 @@ import Typography from '@mui/material/Typography'
 import DefaultAvatar from '../assets/logos/DefaultAvatar.png'
 import { Avatar } from './Avatar'
 
-export default function Pricing() {
+export default function Keynote() {
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+
   return (
     <Container
-      id="pricing"
       sx={{
-        pt: { xs: 12, sm: 12 },
+        pt: { xs: 4, sm: 12 },
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
@@ -30,19 +32,14 @@ export default function Pricing() {
           textAlign: { sm: 'left', md: 'center' }
         }}
       >
-        <Typography component="h2" variant="h4" color="text.primary">
+        <Typography variant={isMobile ? 'h6' : 'h3'} color="text.primary">
           Keynote
         </Typography>
-        {/* <Typography variant="body1" color="text.secondary">
-          Meet incredible people who have made a difference in the world. Our
-          speakers are experts in their fields, and they are here to share their
-          knowledge and experience with you.
-        </Typography> */}
       </Box>
       <Grid container spacing={3} alignItems="center" justifyContent="center">
         {keyVisitors.map((speaker) => (
-          <Grid item key={speaker.name} xs={12} md={12} padding={4}>
-            <CardBox sx={(theme) => ({})}>
+          <Grid item key={speaker.name} xs={12} md={12}>
+            <CardBox sx={{ paddingX: { xs: 0, md: 2 } }}>
               <CardContent>
                 <Grid container spacing={2}>
                   <Grid
@@ -57,24 +54,35 @@ export default function Pricing() {
                       flexDirection: 'column',
                       gap: 2
                     }}
-                    p={2}
+                    p={{ xs: 0, md: 2 }}
                   >
                     <Avatar
                       src={speaker.avatar ?? DefaultAvatar}
                       alt={speaker.name}
                       sx={{ bgcolor: 'whitesmoke' }}
                     />
-                    <Typography variant="h4">{speaker.name}</Typography>
+                    <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
+                      {speaker.name}
+                    </Typography>
                   </Grid>
                   <Grid item xs={12} md={8} p={2}>
                     <Stack spacing={1}>
                       <div>
-                        <Typography variant="h5">Title:</Typography>
-                        <Typography variant="h6">{speaker.title}</Typography>
+                        {!isMobile && (
+                          <Typography variant={'h5'}>Title:</Typography>
+                        )}
+                        <Typography
+                          variant={isMobile ? 'body1' : 'h6'}
+                          fontWeight={isMobile ? 'bold' : 'normal'}
+                        >
+                          {speaker.title}
+                        </Typography>
                       </div>
                       <div>
-                        <Typography variant="h5">Abstract:</Typography>
-                        <Typography variant="body1">
+                        <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
+                          Abstract:
+                        </Typography>
+                        <Typography variant={isMobile ? 'body2' : 'body1'}>
                           {speaker.description}
                         </Typography>
                       </div>
@@ -86,15 +94,18 @@ export default function Pricing() {
 
                 {speaker.experience.map((exp, i) => (
                   <Box key={`exp-${i}`} display="flex" mb="0.5rem">
-                    <AutoAwesomeIcon
-                      fontSize="small"
-                      style={{
-                        color: 'lightgray',
-                        marginTop: '0.1rem',
-                        marginRight: '1rem',
-                        marginLeft: '0.5rem'
-                      }}
-                    />
+                    {isMobile ? (
+                      <>• </>
+                    ) : (
+                      <ArrowRight
+                        fontSize="small"
+                        style={{
+                          color: 'lightgray',
+                          marginRight: '0.5rem',
+                          marginTop: '0.1rem'
+                        }}
+                      />
+                    )}
                     <Typography key={exp} variant="body1" sx={{ opacity: 0.8 }}>
                       {exp}
                     </Typography>
@@ -118,13 +129,15 @@ const CardBox = styled(Card)(({ theme }) => ({
   gap: 4,
   minHeight: 300,
   ':hover': {
-    transform: 'scale(1.01)',
-    border: 'none',
-    boxShadow:
-      theme.palette.mode === 'light'
-        ? `0 8px 12px hsla(210, 98%, 42%, 0.2)`
-        : `0 8px 12px hsla(0, 0%, 0%, 0.8)`,
-    backgroundColor: theme.palette.primary.dark,
-    color: theme.palette.primary.contrastText
-  }
+    transform: 'scale(1.01)'
+  },
+  // ':active': {
+  //   boxShadow:
+  //     theme.palette.mode === 'light'
+  //       ? `0 8px 12px hsla(210, 98%, 42%, 0.2)`
+  //       : `0 8px 12px hsla(0, 0%, 0%, 0.8)`,
+  //   backgroundColor: theme.palette.primary.dark,
+  //   color: theme.palette.primary.contrastText,
+  //   border: 'none'
+  // }
 }))
