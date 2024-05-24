@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
-import { Box, Divider } from '@mui/material'
+import { Box, Divider, useMediaQuery, useTheme } from '@mui/material'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 
 export default function Introduction() {
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+
   return (
     <Container id="introduction" sx={{ py: { xs: 8, sm: 8 } }}>
       <Box
@@ -15,23 +18,26 @@ export default function Introduction() {
         }}
       >
         <Typography
-          variant="h4"
+          variant={isMobile ? 'h5' : 'h3'}
           color="text.primary"
-          textAlign="center"
-          sx={{ mb: 1 }}
-          fontWeight={900}
+          textAlign={'center'}
+          fontWeight={isMobile ? 'bold' : 'normal'}
         >
           Mobile AI Systems
         </Typography>
         <Typography
-          variant="h6"
+          variant={isMobile ? 'body2' : 'h6'}
           color="text.primary"
           textAlign="center"
           sx={{ mb: 3 }}
         >
           June 3rd, 2024, Tokyo
         </Typography>
-        <Typography variant="h6" color="text.secondary" textAlign="center">
+        <Typography
+          variant={isMobile ? 'caption' : 'h6'}
+          color="text.secondary"
+          textAlign="center"
+        >
           <i>
             in conjunction with&nbsp;
             <Link
@@ -44,9 +50,9 @@ export default function Introduction() {
           </i>
         </Typography>
         <Box sx={{ maxWidth: { xs: '90%', sm: '80%' } }}>
-          <Divider sx={{ my: 6 }} />
+          <Divider sx={{ my: { xs: 2, sm: 6 } }} />
           <Typography
-            variant="h6"
+            variant={isMobile ? 'body2' : 'h6'}
             color="text.primary"
             textAlign={{ xs: 'left', sm: 'justify' }}
           >

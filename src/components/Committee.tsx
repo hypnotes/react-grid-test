@@ -24,7 +24,7 @@ const organizingCommittee = [
   }
 ]
 
-export default function Committee() {
+export default function () {
   return (
     <Box
       id="committee"

@@ -10,7 +10,7 @@ export default function KeynotePage() {
 
   return (
     <Box sx={{ bgcolor: 'background.default' }} mt={16}>
-      <Typography variant={isMobile ? 'h5' : 'h2'} align="center" gutterBottom>
+      <Typography variant={isMobile ? 'h4' : 'h2'} align="center" gutterBottom>
         Keynote & Speakers
       </Typography>
       <KeyVisitors />
