@@ -1,6 +1,6 @@
 import { speakers } from '@/data/speakers'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
-import { Stack, styled } from '@mui/material'
+import { Stack, styled, useMediaQuery, useTheme } from '@mui/material'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -12,6 +12,9 @@ import DefaultAvatar from '../assets/logos/DefaultAvatar.png'
 import { Avatar } from './Avatar'
 
 export default function Speakers() {
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+
   return (
     <Container
       id="pricing"

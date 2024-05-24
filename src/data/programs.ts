@@ -18,8 +18,8 @@ const scheduleData = [
   },
   {
     time: '15:10 - 15:30',
-    program: 'Talk 2',
-    speaker: ' '
+    program: 'In-the-wild IoT: Lessons from real-world implementations',
+    speaker: 'Prof. Yuuki Nishiyama'
   },
   {
     time: '15:30 - 16:00',
@@ -27,23 +27,24 @@ const scheduleData = [
   },
   {
     time: '16:00 - 16:20',
-    program: 'Talk 3',
-    speaker: ' '
+    program: 'Analysis of Containerized Networking Systems in IoT Devices',
+    speaker: 'Prof. Gyeongsik Yang'
   },
   {
     time: '16:20 - 16:40',
-    program: 'Talk 4',
-    speaker: ' '
+    program: 'Side-channel attacks on neural networks',
+    speaker: 'Prof. Junbeom Hur'
   },
   {
     time: '16:40 - 17:00',
-    program: 'Talk 5',
-    speaker: ' '
+    program:
+      'Efficient Yet Effective Machine Learning Models for Autonomous Mobile Robot and Vehicles',
+    speaker: 'Prof. Jinkyu Kim'
   },
   {
     time: '17:00 - 17:20',
-    program: 'Talk 6',
-    speaker: ' '
+    program: 'Dynamic Adaptive Multimedia Streaming without Feedback',
+    speaker: 'Prof. Changhee Joo'
   },
   {
     time: '17:20 - 17:30',
