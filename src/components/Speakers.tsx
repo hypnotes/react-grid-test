@@ -95,7 +95,7 @@ export default function Speakers() {
                 {speaker.experience.map((exp, i) => (
                   <Box key={`exp-${i}`} display="flex" mb="0.5rem">
                     {isMobile ? (
-                      <>• </>
+                      <>• &nbsp; </>
                     ) : (
                       <ArrowRight
                         fontSize="small"
