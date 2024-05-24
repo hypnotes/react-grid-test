@@ -45,19 +45,19 @@ const ScheduleGrid = () => {
                   <Typography
                     variant="body2"
                     fontWeight={'bold'}
-                    color={item.presenter ? 'undefined' : palette.primary.main}
+                    color={palette.text.secondary}
                   >
                     {item.program}
                   </Typography>
                 </Grid>
-                {item.presenter && (
+                {item.speaker && (
                   <Box display={'flex'} alignItems={'baseline'} mt={1}>
                     <Typography
                       variant="caption"
                       fontWeight={600}
                       color={palette.text.disabled}
                     >
-                      {item.presenter}
+                      {item.speaker}
                     </Typography>
                   </Box>
                 )}
@@ -72,20 +72,44 @@ const ScheduleGrid = () => {
                 <Box
                   display={'flex'}
                   flexDirection={'row'}
-                  // justifyContent={item.presenter ? 'flex-start' : 'center'}
                   alignContent={'center'}
                 >
-                  {item.presenter ? (
-                    <ContentTypography>{item.program}</ContentTypography>
+                  {item.speaker ? (
+                    <Box my={1}>
+                      <Typography
+                        fontWeight={600}
+                        color={palette.text.primary}
+                      >
+                        {item.program}
+                      </Typography>
+                      <Typography
+                        variant="caption"
+                        fontWeight={600}
+                        color={palette.text.disabled}
+                        mt={-10}
+                      >
+                        {item.speaker}
+                      </Typography>
+                    </Box>
                   ) : (
-                    <Typography
-                      sx={{ margin: '1rem 0rem', fontsize: '1rem' }}
-                      color="primary"
-                      fontWeight={'bold'}
-                      textAlign={'center'}
-                    >
-                      {item.program}
-                    </Typography>
+                    <>
+                      <Typography
+                        sx={{ margin: '1rem 0rem', fontsize: '1rem' }}
+                        color="primary"
+                        fontWeight={'bold'}
+                        textAlign={'center'}
+                      >
+                        {item.program}
+                      </Typography>
+                      <Typography
+                        sx={{ margin: '1rem 0rem', fontsize: '1rem' }}
+                        color="primary"
+                        fontWeight={'bold'}
+                        textAlign={'center'}
+                      >
+                        {item.speaker}
+                      </Typography>
+                    </>
                   )}
                 </Box>
               </Grid>
