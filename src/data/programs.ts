@@ -1,5 +1,3 @@
-import { time } from 'console'
-
 const scheduleData = [
   {
     time: '14:00 - 14:05',
@@ -13,33 +11,33 @@ const scheduleData = [
   {
     time: '14:50 - 15:10',
     program:
-      'Safe Deep Learning for Efficient Communication Resource Allocation in 6G Heterogeneous Networks',
-    speaker: 'Prof. Tiago Koketsu Rodrigues'
+      'Efficient Yet Effective Machine Learning Models for Autonomous Mobile Robot and Vehicles',
+    speaker: 'Prof. Jinkyu Kim'
   },
   {
     time: '15:10 - 15:30',
-    program: 'In-the-wild IoT: Lessons from real-world implementations',
-    speaker: 'Prof. Yuuki Nishiyama'
-  },
-  {
-    time: '15:30 - 16:00',
-    program: 'Coffee break'
-  },
-  {
-    time: '16:00 - 16:20',
-    program: 'Analysis of Containerized Networking Systems in IoT Devices',
-    speaker: 'Prof. Gyeongsik Yang'
-  },
-  {
-    time: '16:20 - 16:40',
     program: 'Side-channel attacks on neural networks',
     speaker: 'Prof. Junbeom Hur'
   },
   {
+    time: '15:30 - 16:00',
+    program: 'Break'
+  },
+  {
+    time: '16:00 - 16:20',
+    program: 'In-the-wild IoT: Lessons from real-world implementations',
+    speaker: 'Prof. Yuuki Nishiyama'
+  },
+  {
+    time: '16:20 - 16:40',
+    program: 'Analysis of Containerized Networking Systems in IoT Devices',
+    speaker: 'Prof. Gyeongsik Yang'
+  },
+  {
     time: '16:40 - 17:00',
     program:
-      'Efficient Yet Effective Machine Learning Models for Autonomous Mobile Robot and Vehicles',
-    speaker: 'Prof. Jinkyu Kim'
+      'Safe Deep Learning for Efficient Communication Resource Allocation in 6G Heterogeneous Networks',
+    speaker: 'Prof. Tiago Koketsu Rodrigues'
   },
   {
     time: '17:00 - 17:20',
