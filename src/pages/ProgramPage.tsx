@@ -17,7 +17,6 @@ export default function ProgramPage() {
       >
         Program
       </Typography>
-      <Divider />
       <ScheduleGrid />
       <Footer />
     </Box>

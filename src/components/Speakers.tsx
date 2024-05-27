@@ -32,7 +32,7 @@ export default function Speakers() {
           textAlign: { sm: 'left', md: 'center' }
         }}
       >
-        <Typography variant={isMobile ? 'h6' : 'h3'} color="text.primary">
+        <Typography variant={isMobile ? 'h6' : 'h5'} color="text.primary">
           Keynote
         </Typography>
       </Box>
@@ -47,7 +47,7 @@ export default function Speakers() {
           <Box key={idx}>
             {idx === 1 && (
               <Typography
-                variant={isMobile ? 'h6' : 'h3'}
+                variant={isMobile ? 'h6' : 'h5'}
                 color="text.primary"
                 mt={8}
                 mb={4}
