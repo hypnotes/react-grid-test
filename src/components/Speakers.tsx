@@ -33,87 +33,110 @@ export default function Speakers() {
         }}
       >
         <Typography variant={isMobile ? 'h6' : 'h3'} color="text.primary">
-          Speakers
+          Keynote
         </Typography>
       </Box>
-      <Grid container spacing={3} alignItems="center" justifyContent="center">
-        {speakers.map((speaker) => (
-          <Grid item key={speaker.name} xs={12} md={12}>
-            <CardBox sx={{ paddingX: { xs: 0, md: 2 } }}>
-              <CardContent>
-                <Grid container spacing={2}>
-                  <Grid
-                    item
-                    xs={12}
-                    md={4}
-                    sx={{
-                      mb: 1,
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      flexDirection: 'column',
-                      gap: 2
-                    }}
-                    p={{ xs: 0, md: 2 }}
-                  >
-                    <Avatar
-                      src={speaker.avatar ?? DefaultAvatar}
-                      alt={speaker.name}
-                      sx={{ bgcolor: 'whitesmoke' }}
-                    />
-                    <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
-                      {speaker.name}
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={12} md={8} p={2}>
-                    <Stack spacing={1}>
-                      <div>
-                        {!isMobile && (
-                          <Typography variant={'h5'}>Title:</Typography>
-                        )}
-                        <Typography
-                          variant={isMobile ? 'body1' : 'h6'}
-                          fontWeight={isMobile ? 'bold' : 'normal'}
-                        >
-                          {speaker.title}
-                        </Typography>
-                      </div>
-                      <div>
-                        <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
-                          Abstract:
-                        </Typography>
-                        <Typography variant={isMobile ? 'body2' : 'body1'}>
-                          {speaker.description}
-                        </Typography>
-                      </div>
-                    </Stack>
-                  </Grid>
-                </Grid>
-                <Box display={'flex'} alignItems={'baseline'}></Box>
-                <Divider sx={{ marginY: 2 }} />
-
-                {speaker.experience.map((exp, i) => (
-                  <Box key={`exp-${i}`} display="flex" mb="0.5rem">
-                    {isMobile ? (
-                      <>• &nbsp; </>
-                    ) : (
-                      <ArrowRight
-                        fontSize="small"
-                        style={{
-                          color: 'lightgray',
-                          marginRight: '0.5rem',
-                          marginTop: '0.1rem'
-                        }}
+      <Grid
+        container
+        spacing={3}
+        alignItems="center"
+        justifyContent="center"
+        gap={4}
+      >
+        {speakers.map((speaker, idx) => (
+          <Box key={idx}>
+            {idx === 1 && (
+              <Typography
+                variant={isMobile ? 'h6' : 'h3'}
+                color="text.primary"
+                mt={8}
+                mb={4}
+                textAlign={'center'}
+              >
+                Speakers
+              </Typography>
+            )}
+            <Grid item key={speaker.name} xs={12} md={12}>
+              <CardBox sx={{ paddingX: { xs: 0, md: 2 } }}>
+                <CardContent id={speaker.name ?? idx}>
+                  <Grid container spacing={2}>
+                    <Grid
+                      item
+                      xs={12}
+                      md={4}
+                      sx={{
+                        mb: 1,
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        flexDirection: 'column',
+                        gap: 2
+                      }}
+                      p={{ xs: 0, md: 2 }}
+                    >
+                      <Avatar
+                        src={speaker.avatar ?? DefaultAvatar}
+                        alt={speaker.name}
+                        sx={{ bgcolor: 'whitesmoke' }}
                       />
-                    )}
-                    <Typography key={exp} variant="body1" sx={{ opacity: 0.8 }}>
-                      {exp}
-                    </Typography>
-                  </Box>
-                ))}
-              </CardContent>
-            </CardBox>
-          </Grid>
+                      <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
+                        {speaker.name}
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={12} md={8} p={2}>
+                      <Stack spacing={1}>
+                        <div>
+                          {!isMobile && (
+                            <Typography variant={'h5'}>Title:</Typography>
+                          )}
+                          <Typography
+                            variant={isMobile ? 'body1' : 'h6'}
+                            fontWeight={isMobile ? 'bold' : 'normal'}
+                          >
+                            {speaker.title}
+                          </Typography>
+                        </div>
+                        <div>
+                          <Typography variant={isMobile ? 'subtitle1' : 'h5'}>
+                            Abstract:
+                          </Typography>
+                          <Typography variant={isMobile ? 'body2' : 'body1'}>
+                            {speaker.description}
+                          </Typography>
+                        </div>
+                      </Stack>
+                    </Grid>
+                  </Grid>
+                  <Box display={'flex'} alignItems={'baseline'}></Box>
+                  <Divider sx={{ marginY: 2 }} />
+
+                  {speaker.experience.map((exp, i) => (
+                    <Box key={`exp-${i}`} display="flex" mb="0.5rem">
+                      {isMobile ? (
+                        <>• &nbsp; </>
+                      ) : (
+                        <ArrowRight
+                          fontSize="small"
+                          style={{
+                            color: 'lightgray',
+                            marginRight: '0.5rem',
+                            marginTop: '0.1rem'
+                          }}
+                        />
+                      )}
+                      <Typography
+                        key={exp}
+                        variant="body1"
+                        sx={{ opacity: 0.8 }}
+                      >
+                        {exp}
+                      </Typography>
+                    </Box>
+                  ))}
+                </CardContent>
+              </CardBox>
+            </Grid>
+          </Box>
         ))}
       </Grid>
     </Container>

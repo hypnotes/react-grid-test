@@ -81,7 +81,8 @@ export default function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
               onClick={() => navigate(link.path)}
               key={link.title + link.path}
               style={{
-                color: isTopmostHome && isHomePage ? 'white' : ' '
+                color: isTopmostHome && isHomePage ? 'white' : ' ',
+                marginLeft: 10
               }}
             >
               {link.title}

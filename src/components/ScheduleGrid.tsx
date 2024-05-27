@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import ProfessorModal from '@components/ProfessorModal'
 import {
   Box,
   Container,
@@ -13,6 +15,16 @@ import scheduleData from '../data/programs'
 const ScheduleGrid = () => {
   const isMobile = useMediaQuery('(max-width:600px)')
   const { palette } = useTheme()
+
+  const [open, setOpen] = useState<number | null>(null)
+
+  const handleClickOpen = (id: number) => {
+    setOpen(id)
+  }
+
+  const handleClose = () => {
+    setOpen(null)
+  }
   return (
     <Container sx={{ width: '90vw', maxWidth: '1000px', marginY: 8 }}>
       {!isMobile && (
@@ -40,7 +52,11 @@ const ScheduleGrid = () => {
                   {item.time}
                 </Typography>
               </Grid>
-              <Grid item xs={8}>
+              <Grid
+                item
+                xs={8}
+                onClick={item.id ? () => handleClickOpen(item.id) : undefined}
+              >
                 <Grid item>
                   <Typography
                     variant="body2"
@@ -73,13 +89,12 @@ const ScheduleGrid = () => {
                   display={'flex'}
                   flexDirection={'row'}
                   alignContent={'center'}
+                  sx={{ cursor: item.id ? 'pointer' : 'default' }}
+                  onClick={item.id ? () => handleClickOpen(item.id) : undefined}
                 >
                   {item.speaker ? (
                     <Box my={1}>
-                      <Typography
-                        fontWeight={600}
-                        color={palette.text.primary}
-                      >
+                      <Typography fontWeight={600} color={palette.text.primary}>
                         {item.program}
                       </Typography>
                       <Typography
@@ -118,6 +133,7 @@ const ScheduleGrid = () => {
           <Divider />
         </Box>
       ))}
+      <ProfessorModal id={open} open={Boolean(open)} onClose={handleClose} />
     </Container>
   )
 }

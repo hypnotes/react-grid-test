@@ -19,6 +19,10 @@ const routes: RouteObject[] = [
     element: <KeynotePage />
   },
   {
+    path: 'keynote/:speaker',
+    element: <KeynotePage />
+  },
+  {
     path: 'program',
     element: <ProgramPage />
   },
