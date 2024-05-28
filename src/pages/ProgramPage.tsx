@@ -1,8 +1,9 @@
+import { useState } from 'react'
 import ScheduleGrid from '@components/ScheduleGrid'
-import { Typography, useMediaQuery, useTheme } from '@mui/material'
+import { Snackbar, Typography, useMediaQuery, useTheme } from '@mui/material'
 import Box from '@mui/material/Box'
-import Divider from '@mui/material/Divider'
 import Footer from '../components/Footer'
+import AddressBox from '@components/AddressBox'
 
 export default function ProgramPage() {
   const theme = useTheme()
@@ -17,6 +18,7 @@ export default function ProgramPage() {
       >
         Program
       </Typography>
+      <AddressBox />
       <ScheduleGrid />
       <Footer />
     </Box>
